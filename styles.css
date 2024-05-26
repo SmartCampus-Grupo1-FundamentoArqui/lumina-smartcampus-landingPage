@@ -126,6 +126,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
+
 }
 
 .nav__logo a {
@@ -133,10 +134,14 @@ nav {
 }
 
 .nav__menu__btn {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--white);
   cursor: pointer;
+  position: absolute;
+  top: 12px;
+  left: 15px;
 }
+
 
 .nav__links {
   position: absolute;
@@ -534,6 +539,7 @@ nav {
     flex: 1;
     padding: 0;
     background-color: transparent;
+    justify-content: space-between;
   }
 
   .nav__logo a {
@@ -707,9 +713,47 @@ input[type="submit"] {
   clear: both;
 }
 
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type="submit"] {
-    width: 100%;
-    margin-top: 0;
+.language-switcher {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  display: flex;
+}
+
+.lang-btn {
+  padding: 10px 20px;
+  margin-left: 5px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 16px;
+}
+
+
+.lang-btn.active {
+  background-color: var(--white);
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.lang-btn:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .nav__header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .language-switcher {
+    margin-right: 0;
   }
 }
