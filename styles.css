@@ -720,11 +720,18 @@ input[type="submit"] {
   display: flex;
 }
 
+.language-switcher {
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  display: flex;
+}
+
 .lang-btn {
   padding: 10px 20px;
   margin-left: 5px;
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -732,10 +739,9 @@ input[type="submit"] {
   font-size: 16px;
 }
 
-
 .lang-btn.active {
-  background-color: var(--white);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white);
   transform: scale(1.1);
 }
 
@@ -743,6 +749,7 @@ input[type="submit"] {
   background-color: var(--primary-color-dark);
   color: var(--white);
 }
+
 
 @media (max-width: 768px) {
   .nav__header {

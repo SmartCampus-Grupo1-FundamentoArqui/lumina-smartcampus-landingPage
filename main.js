@@ -60,12 +60,10 @@ ScrollReveal().reveal(".container", {
   interval: 500,
 });
 
-
 ScrollReveal().reveal(".special__grid", {
   ...scrollRevealOption,
   interval: 500,
 });
-
 
 const swiper = new Swiper(".swiper", {
   loop: true,
@@ -77,25 +75,25 @@ const swiper = new Swiper(".swiper", {
 
 function loadLanguage(lang) {
   fetch(`assets/lang/${lang}.json`)
-      .then(response => response.json())
-      .then(data => {
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const key = el.getAttribute("data-i18n");
-          if (data[key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-              el.placeholder = data[key]; // Update placeholder if applicable
-            } else {
-              el.innerHTML = data[key]; // Update text
-            }
+    .then(response => response.json())
+    .then(data => {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (data[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = data[key]; // Update placeholder if applicable
+          } else {
+            el.innerHTML = data[key]; // Update text
           }
-        });
+        }
+      });
 
-        // Update button styles
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-          btn.classList.remove('active');
-        });
-        document.getElementById(`lang-${lang}`).classList.add('active');
-      }).catch(error => console.error('Error loading the language file:', error));
+      // Update button styles
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(`lang-${lang}`).classList.add('active');
+    }).catch(error => console.error('Error loading the language file:', error));
 }
 
 // Add event listeners for language switch buttons
@@ -106,4 +104,3 @@ document.getElementById('lang-es').addEventListener('click', () => loadLanguage(
 document.addEventListener('DOMContentLoaded', function() {
   loadLanguage('en');
 });
-
