@@ -1,1 +1,1 @@
-# Landing-page RocketNotes Upgrade
+# Landing-page SmartCampus Upgrade
